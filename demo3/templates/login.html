@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <a href="/add_user/">添加用户</a>
+    </div>
+
+    <table border="1">
+        <thread>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>密码</th>
+                <th>年龄</th>
+                <th>操作</th>
+                <th>修改</th>
+            </tr>
+        </thread>
+        <tbody>
+            {% for item in data%}
+                <tr>
+                    <th>{{item.id}}</th>
+                    <th>{{item.name}}</th>
+                    <th>{{item.password}}</th>
+                    <th>{{item.age}}</th>
+                    <th>
+                        <a href="/delete_user/?id={{item.id}}">删除</a>
+                    </th>
+                    <th>
+                        <a href="/alter_user/?id={{item.id}}">修改</a>
+                    </th>
+                </tr>
+            {% endfor%}
+        </tbody>
+
+
+    </table>
+
+<a>{{dataList.0}}</a>
+<a>{{dataList.1}}</a>
+<a>{{dataList.2}}</a>
+</body>
+</html>
